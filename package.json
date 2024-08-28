@@ -4,6 +4,9 @@
   "description": "Restpack.io client for HTML to PDF API, and Screenshot API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "repository": "https://github.com/restpackio/restpack-node",
   "homepage": "https://restpack.io",
   "author": "Restpack Inc",
@@ -15,13 +18,10 @@
     "prepublishOnly": "tsc"
   },
   "devDependencies": {
-    "@types/request": "^2.47.0",
+    "@types/node": "^18.19.47",
     "typedoc": "^0.20.36",
     "typedoc-plugin-markdown": "^3.7.2",
     "typescript": "^4.2.4"
-  },
-  "dependencies": {
-    "request": "^2.85.0"
   },
   "keywords": [
     "html2pdf",

@@ -80,7 +80,10 @@ export default class Screenshot extends Client {
     opts.json = true;
     opts.url = url;
 
-    return this.request("/capture", { method: "POST", json: opts });
+    return this.request("/capture", {
+      method: "POST",
+      body: JSON.stringify(opts),
+    });
   }
 
   /**
@@ -94,7 +97,10 @@ export default class Screenshot extends Client {
     opts.json = true;
     opts.html = html;
 
-    return this.request("/capture", { method: "POST", json: opts });
+    return this.request("/capture", {
+      method: "POST",
+      body: JSON.stringify(opts),
+    });
   }
 
   /**
@@ -109,8 +115,7 @@ export default class Screenshot extends Client {
 
     return this.request("/capture", {
       method: "POST",
-      encoding: null,
-      json: opts,
+      body: JSON.stringify(opts),
     });
   }
 
@@ -129,8 +134,7 @@ export default class Screenshot extends Client {
 
     return this.request("/capture", {
       method: "POST",
-      encoding: null,
-      json: opts,
+      body: JSON.stringify(opts),
     });
   }
 }

@@ -95,7 +95,10 @@ export default class HTML2PDF extends Client {
     opts.json = true;
     opts.url = url;
 
-    return this.request("/convert", { method: "POST", json: opts });
+    return this.request("/convert", {
+      method: "POST",
+      body: JSON.stringify(opts),
+    });
   }
 
   /**
@@ -109,7 +112,10 @@ export default class HTML2PDF extends Client {
     opts.json = true;
     opts.html = html;
 
-    return this.request("/convert", { method: "POST", json: opts });
+    return this.request("/convert", {
+      method: "POST",
+      body: JSON.stringify(opts),
+    });
   }
 
   /**
@@ -124,8 +130,7 @@ export default class HTML2PDF extends Client {
 
     return this.request("/convert", {
       method: "POST",
-      encoding: null,
-      json: opts,
+      body: JSON.stringify(opts),
     });
   }
 
@@ -141,8 +146,7 @@ export default class HTML2PDF extends Client {
 
     return this.request("/convert", {
       method: "POST",
-      encoding: null,
-      json: opts,
+      body: JSON.stringify(opts),
     });
   }
 }
